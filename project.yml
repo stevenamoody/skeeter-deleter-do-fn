@@ -1,0 +1,12 @@
+packages:
+  - name: skeeter-deleter
+    functions:
+      - name: skeeter-deleter-fn
+        runtime: 'python:3.11'
+        parameters: # function scope
+        web: false
+        triggers:
+        - name: once-a-day
+          sourceType: scheduler
+          sourceDetails:
+            cron: 0 0 * * *
